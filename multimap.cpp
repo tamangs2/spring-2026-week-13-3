@@ -26,18 +26,18 @@ int main() {
     // Create a multimap where the key is student ID (int) and value is student name (string)
     multimap<int, string> students;
 
-    // Insert students with their IDs into the multimap
-    students.insert({101, "Arika"});
-    students.insert({102, "Sita"});
-    students.insert({103, "Shree"});
-    students.insert({101, "Lily"});   // duplicate id
-    students.insert({103, "Jonah"});  // duplicate id
-    
-    // Display all students sorted by their student IDs
-    cout << "Student List (sorted by ID):" << endl;
-    for (auto it = students.begin(); it != students.end(); ++it) {
-        cout << "ID: " << it->first << ", Name: " << it->second << endl;
-    }
+// Insert students into multimap
+students.insert({101, "Arika"});
+students.insert({102, "Sita"});
+students.insert({103, "Shree"});
+students.insert({101, "Lily"});   // duplicate ID
+students.insert({103, "Jay"});    // duplicate ID
 
-    return 0;
+// Display students sorted by ID
+cout << "Student List (sorted by ID):" << endl;
+
+for (auto student : students) {
+    cout << "ID: " << student.first
+         << ", Name: " << student.second << endl;
+}
 }
